@@ -25,7 +25,7 @@
         <div class="card my-3">  
           <div class="card-body">  
             <div class="media">  
-              <img class="align-self-start mr-3" src="{{destination.image}}">  
+              <img class="align-self-start mr-3" src="{{destination.image}}" style="height: 500; width: 100%;">  
               <div class="media-body">  
                 <small class="font-weight-bold text-muted">Stay 2 nights</small>  
                 <h5 class="mt-0">{{destination.name}}</h5>  
@@ -49,7 +49,7 @@
       {{render_form(form,"/destinations/{0}/comment".format(destination.id))}}
       {% for comment in destination.comments %}
       <div class="col-md-12">  
-        <b>{{comment.user.name}} <span class="ml-2 text-muted">January 2024</span></b>
+        <b>{{ comment.user.name }} <span class="ml-2 text-muted">{{ comment.created_at.strftime('%b %d, %Y at %I:%M %p') }}</span></b>
         <p>{{comment.text}}</p>  
       </div>
       {% endfor %} 
